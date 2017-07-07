@@ -55,10 +55,10 @@ function jsonp(data) {                          //跨域调用搜索API   需在
         for(var i=0;i<data.words.length;i++){               //获取所有内容和地址，并输出
             var newKeyName=data.words[i]["keyname"];
             newKeyName=newKeyName.replace(regexp,"");       //正则删除多余标签
-            html+='<li><a href="http://search.suning.com/'+newKeyName+'/" target="_self"><span class="keyname">'+data.words[i]["keyname"]+'</span></a></li>';
+            html+='<li><a href="https://search.suning.com/'+newKeyName+'/" target="_self"><span class="keyname">'+data.words[i]["keyname"]+'</span></a></li>';
         }
     };
-    html+='<li class="g-ac-store"><a href="http://shopsearch.suning.com/shop/search.do?app=shopsearch&keyword='+input.value+'" target="_self"><i class="icon-store"></i>找“<em>'+ input.value+"" +'</em>”相关<b>店铺</b></a></li>';
+    html+='<li class="g-ac-store"><a href="https://shopsearch.suning.com/shop/search.do?app=shopsearch&keyword='+input.value+'" target="_self"><i class="icon-store"></i>找“<em>'+ input.value+"" +'</em>”相关<b>店铺</b></a></li>';
     oUl.innerHTML=html;
 }
 EventUtil.addHandler(document,"DOMContentLoaded",function(){
@@ -943,7 +943,7 @@ EventUtil.addHandler(document,"DOMContentLoaded",function(){
             hotSearch.style.display = "none";
             results.style.display = "block";
             var script = document.createElement("script");   //新建script标签
-            script.src = "http://ds.suning.cn/ds/his/new/-"+input.value+"-0-1_1-jsonp";
+            script.src = "https://ds.suning.cn/ds/his/new/-"+input.value+"-0-1_1-jsonp";
             document.body.appendChild(script);
             if(oScript.length>2){                         //删除多余script标签
                 for(var i=1;i<oScript.length-1;i++){
@@ -959,13 +959,13 @@ EventUtil.addHandler(document,"DOMContentLoaded",function(){
         if(reg.test(input.value)) {
             var event=EventUtil.getEvent(event);
             if(event.keyCode==13) {                             //按下的是回车键
-                window.open("http://search.suning.com/" + input.value + "/");   //新建窗口
+                window.open("https://search.suning.com/" + input.value + "/");   //新建窗口
                 EventUtil.preventDefault(event);            //阻止冒泡，防止打开多个窗口
             }
         }
     })
     EventUtil.addHandler(searchSubmit,"click",function(){   //点击搜索按钮时
-        window.open("http://search.suning.com/" + input.value + "/");    //新建窗口
+        window.open("https://search.suning.com/" + input.value + "/");    //新建窗口
     })
     EventUtil.addHandler(bannerBox,"mouseenter",function(){         //停止图片轮播，显示按钮
         clearInterval(timer);
